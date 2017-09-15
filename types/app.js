@@ -63,6 +63,17 @@ myRealAge = '27';
 var myFakeAge; // manually assigning types
 myFakeAge = 18;
 // myFakeAge = '18'; // doesn't compile
+// Never
+// A function that *never* returns a value
+function neverReturns() {
+    throw new Error("An error!");
+}
+// Nullable Types
+// null is its own type in TS 2.0+
+var canBeNull = 12;
+canBeNull = null; // clears the value of the var
+var canAlsoBeNull; // initialised with undefined
+canAlsoBeNull = null; // now set to null
 // Functions
 // ---------
 // functions should have typed return values
@@ -83,8 +94,47 @@ function multiply(x, y) {
 }
 console.log(multiply(2, 10));
 // function types
+// variables can store functions
+// These can also be given types for args + return vals
 var myMultiply;
-myMultiply = sayHello;
-myMultiply();
+// myMultiply = sayHello;
+// myMultiply(); // these won't compile 
 myMultiply = multiply;
 console.log(myMultiply(5, 5));
+// Objects
+// -------
+var userData = {
+    name: "Tom",
+    age: 25
+};
+// inferred into: { name: string, age: number }
+// explicitly defined object types
+var moreUserData = {
+    name: "Dave",
+    age: 30
+};
+// complex object
+var complex = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+// creates a reusable Complex type
+// Same object as above, but with the type alias
+var complex2 = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+// union types
+// variables can be set to multiple types by placing
+// a pipe between each type in the declaration
+var myRealRealAge = 27;
+myRealRealAge = '27';
+// check types
+var finalValue = 5000;
+if (typeof finalValue == "number") {
+    console.log("Final value is a number");
+}

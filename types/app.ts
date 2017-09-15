@@ -79,6 +79,20 @@ let myFakeAge: number; // manually assigning types
 myFakeAge = 18;
 // myFakeAge = '18'; // doesn't compile
 
+// Never
+// A function that *never* returns a value
+function neverReturns(): never {
+    throw new Error("An error!");
+}
+
+// Nullable Types
+// null is its own type in TS 2.0+
+let canBeNull: number | null = 12;
+canBeNull = null; // clears the value of the var
+
+let canAlsoBeNull; // initialised with undefined
+canAlsoBeNull = null; // now set to null
+
 // Functions
 // ---------
 
@@ -113,3 +127,52 @@ let myMultiply: (val1: number, val2: number) => number;
 
 myMultiply = multiply;
 console.log(myMultiply(5, 5));
+
+// Objects
+// -------
+let userData = { // object type is inferred by TS
+    name: "Tom",
+    age: 25
+};
+// inferred into: { name: string, age: number }
+
+// explicitly defined object types
+let moreUserData: { name: string, age: number} = {
+    name: "Dave",
+    age: 30
+};
+
+// complex object
+let complex: { data: number[], output: (all: boolean) => number[] } = {
+    data: [100, 3.99, 10],
+
+    output: function (all: boolean) {
+        return this.data;
+    }
+};
+
+// Type alias
+type Complex = { data: number[], output: (all: boolean) => number[] }; 
+// creates a reusable Complex type
+
+// Same object as above, but with the type alias
+let complex2: Complex = {
+    data: [100, 3.99, 10],
+
+    output: function (all: boolean) {
+        return this.data;
+    }
+};
+
+// union types
+// variables can be set to multiple types by placing
+// a pipe between each type in the declaration
+let myRealRealAge: number | string = 27;
+myRealRealAge = '27';
+
+// check types
+let finalValue = 5000;
+if (typeof finalValue == "number") {
+    console.log("Final value is a number");
+    
+}
