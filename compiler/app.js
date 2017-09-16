@@ -4,6 +4,7 @@ var myAge = 27;
 var anything; // only works with noImplicitAny set to false
 anything = 12;
 function controlMe(isTrue, somethingElse) {
+    // somethingElse will throw an error if noUnusedParamaters is true
     var result;
     if (isTrue) {
         result = 12;
