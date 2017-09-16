@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false, // stops inferred any types
+        "sourceMap": false, // lets you debug from the browser
+        "strictNullChecks": true, // stops unassigned vars from being used
+        "noUnusedParameters": true // stops unused args in functions
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

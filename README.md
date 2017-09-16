@@ -20,3 +20,9 @@ Below are my observations and thoughts from playing around with TypeScript. Bear
 - I recognise some things from C#, like enums.
 - Overall, TS feels like a lovechild between C# and JS.
 - Also feels like JavaScript: Microsoft Edition.
+
+**After Studying the Compiler**
+- Compilation errors actually only being warnings by default is interesting.
+- The amount of behaviour that can be customised is intimidating, but I can see it being very useful as well.
+- Enabling sourceMap allows for debugging within the browser, which would be useful if I knew how to really use the browser debug tools.
+- Specific options, such as strictNullChecks and noUnusedParamaters, could help improve code quality
