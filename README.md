@@ -34,3 +34,11 @@ Below are my observations and thoughts from playing around with TypeScript. Bear
 - Template literals in particular has syntax identical to Ruby's string interpolation.
 - ES6 features allow for more terse, clean code compared to ES5, e.g. unpacking an array with the spread operator as opposed to using a `forEach` loop.
 - Arrow functions are great. Implicit return, and no `this` rebinding are all excellent.
+
+**After Studying Classes**
+- Classes have first-class (haha nice pun dude) support in TypeScript, which is refreshing compared to the prototype pattern in JS.
+- ES6 does have built-in support for classes, but it's nowhere near as robust as TypeScript.
+- Getters, setters, private methods & properties, static methods & properties all allow for highly object-oriented code.
+- TypeScript continues to feel very similar to C# for me syntactically. Considering both languages were designed by the same guy at Microsoft, I'm not sure why this astonishes me.
+- Abstract classes forcing implementation of methods would be great for ensuring consistent code. I don't see myself using *too* often when writing day-to-day code, however.
+- Overall, object-oriented TypeScript feels more elegant to me than Ruby, which has surprised me (I LOVE RUBY).
